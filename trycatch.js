@@ -1,9 +1,14 @@
 
+const stack = require ('./classstack.js');
+
+
+let stack1 = stack.arr;
+
 
 class Bracket {
 	constructor() {}
 
-arr = [];
+stack1 = [];
 
 checkBrackets (string) {
 	let a = '(';
@@ -13,19 +18,19 @@ checkBrackets (string) {
 	let B = '}';
 	let C = ']';
 
-	let arr = [];
+	
 
 	for(let i = 0; i < string.length; i++) {
 
-		if((arr[arr.length-1] == a && string[i] == A) || (arr[arr.length-1] == b && string[i] == B) || (arr[arr.length-1] == c && string[i] == C) ) {
+		if((stack1[stack1.length-1] == a && string[i] == A) || (stack1[stack1.length-1] == b && string[i] == B) || (stack1[stack1.length-1] == c && string[i] == C) ) {
 
-					arr.pop();
+					stack1.pop();
 
 					
 
 		} else if(string[i] == a || string[i] == b || string[i] == c) {
 
-					arr.push(string[i]);
+					stack1.push(string[i]);
 
 				 }
 			else {
@@ -36,16 +41,17 @@ checkBrackets (string) {
 			
 		
 	}
-	return arr.length;
+	return stack1.length;
 }
 
 }
+
 
 let bracket = new Bracket();
 
 
 
-	try { if(bracket.checkBrackets('{{jhdbkhc((dbkj[kjdhn]dskjb{djhkbc}dkcbj()kbdcbk)}}') == 0){
+	try { if(bracket.checkBrackets('{{{{jhdbk}hc(dbkj[kjdhn]dskjb{djhkbc}dkcbj()kbdcbk)}}}') == 0){
 
 		console.log(`Quantity of brackets are correct!`);
 
