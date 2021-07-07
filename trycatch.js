@@ -1,5 +1,11 @@
-function checkBrackets(string) {
 
+
+class Bracket {
+	constructor() {}
+
+arr = [];
+
+checkBrackets (string) {
 	let a = '(';
 	let b = '{';
 	let c = '[';
@@ -15,13 +21,13 @@ function checkBrackets(string) {
 
 					arr.pop();
 
-					console.log(arr);
+					
 
 		} else if(string[i] == a || string[i] == b || string[i] == c) {
 
-					arr.pus(string[i]);
+					arr.push(string[i]);
 
-				    console.log(arr);}
+				 }
 			else {
 				continue;
 			}
@@ -33,14 +39,28 @@ function checkBrackets(string) {
 	return arr.length;
 }
 
+}
 
-	try { if(checkBrackets('{{jhdbk(hcdbkj[kjdhn]dskjb{djhkbc}dkcbj()kbdcbk)}}') == 0){
+let bracket = new Bracket();
+
+
+
+	try { if(bracket.checkBrackets('{{jhdbkhc((dbkj[kjdhn]dskjb{djhkbc}dkcbj()kbdcbk)}}') == 0){
+
 		console.log(`Quantity of brackets are correct!`);
+
+		}   else {
+
+			console.log(`Quantity of brackets aren't correct!`);
+
+			}
 		
 		
-	} }
+	 }
 	catch(err) {
+
 		console.log('some error has occured');
+
 		console.log(err);
 	}
 
